@@ -1,0 +1,10 @@
+
+<td selected="false" colSpan="1" width=""><attribute name="bgColor"><if test="number(@overdue)&gt;365">#FF0000</if><if test="number(@overdue)&lt;365">#00FF00</if><!--<if test="number(@overdue)&lt;270">#00FF00</if>--></attribute><eocfield name="entrydate"></eocfield> by: <eocfield name="username"/><script type="text/javascript">
+	var reload =
+	<expression name="overdue">
+		datediff(dd,getUTCDATE(),entrydate)
+	</expression>;
+	if(reload &gt;0)
+		setTimeout("parent.internalReload();", reload*60000);
+</script>
+</td>
